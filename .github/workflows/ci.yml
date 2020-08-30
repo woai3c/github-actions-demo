@@ -1,0 +1,21 @@
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      env:
+        ACCESS_TOKEN: ${{ secrets.VUE_ADMIN_TEMPLATE }}
+        BRANCH: master
+        FOLDER: dist
+        BUILD_SCRIPT: npm install && npm run build
+        REPOSITORY_NAME: woai3c/woai3c.github.io/
+        TARGET_FOLDER: github-actions-demo
