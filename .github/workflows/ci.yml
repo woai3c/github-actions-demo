@@ -23,6 +23,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.VUE_ADMIN_TEMPLATE }}
           BRANCH: master
           FOLDER: dist
-          BUILD_SCRIPT: npm install && npm run build
           REPOSITORY_NAME: woai3c/woai3c.github.io/
           TARGET_FOLDER: github-actions-demo
