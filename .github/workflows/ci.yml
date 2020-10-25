@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest # 构建环境使用 ubuntu
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1  # 使用别人写好的 actions
+        uses: actions/checkout@v2.3.1  
         with:
           persist-credentials: false
 
@@ -18,7 +18,7 @@ jobs:
           npm run build
 
       - name: Deploy 🚀 # 将打包内容发布到 github page
-        uses: JamesIves/github-pages-deploy-action@3.5.9
+        uses: JamesIves/github-pages-deploy-action@3.5.9 # 使用别人写好的 actions
         with:  # 自定义环境变量
           ACCESS_TOKEN: ${{ secrets.VUE_ADMIN_TEMPLATE }}
           BRANCH: master
